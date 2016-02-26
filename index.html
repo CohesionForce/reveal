@@ -1,0 +1,274 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="css/reveal.css">
+        <link rel="stylesheet" href="css/theme/sky.css">
+        <link rel="stylesheet" href="lib/css/zenburn.css">
+    </head>
+    <body>
+        <div class="reveal">
+            <div class="slides">
+               <div class="footer"><span>Innovative Solutions for Mission Critical Systems<span></div>
+               <div class="header-left"></div><div class="header-right"></div>
+            <section data-markdown ><script type="text/template">
+            ##Code Generation with Eclipse XTend
+            </script>
+            </section>
+            <section data-markdown ><script type="text/template">
+            ###Concept
+            
+            * Use Eclipse technology to generate an logger/converter for DIS data.
+            
+            * EMF for the DIS structure was created based on a schema for the 1998 DIS standard available in the OpenDIS codebase. [Open-DIS](http://open-dis.sourceforge.net/Open-DIS.html)
+            
+            * Avro schema generation was based on a previous personal project hosted on GitHub. [EMF-Avro](https://github.com/LangleyStudios/eclipse-avro)
+            </script>
+            </section>
+            <section data-markdown ><script type="text/template">
+            ###XText
+            
+            - Xtext is a framework for development of programming languages and domain specific languages.
+            
+            - It covers all aspects of a complete language infrastructure. It comes with great defaults for all of these aspects which at the same time can be easily tailored to your individual needs.<!-- .element: class="fragment"-->
+            
+            - XText uses a language called XTend to perform code generation.<!-- .element: class="fragment"-->
+            </script>
+            </section>
+            <section data-markdown ><script type="text/template">
+            ###XTend
+            
+            - Xtend is a flexible and expressive dialect of Java, which compiles into readable Java 5 compatible source code.
+            
+            - The compiled output is readable and pretty-printed, and tends to run as fast as the equivalent handwritten Java code.<!-- .element: class="fragment"-->
+            
+            - Get productive and write beautiful code with powerful macros, lambdas, operator overloading and many more modern language features.<!-- .element: class="fragment"-->
+            </script>
+            </section>
+            <section data-markdown ><script type="text/template">
+            ###Issues
+            
+            XText creates an EMF model for a parse tree based on a grammar and creates an in-memory instance when parsing a file.  We already have an instance of a model and do not require a DSL to parse a file.
+            
+            XText uses Google Guice dependency injection to create and call a code generator.  We want to be able to call a method either in a main, or a unit test.
+            </script>
+            </section>
+            <section data-markdown ><script type="text/template">
+            ###Solutions
+            
+            Implement the XText interface org.eclipse.xtext.generator.IGenerator.  This is the class that does that actual code generation.
+            
+            Extend the XText class org.eclipse.xtext.resource.generic.AbstractGenericResourceRuntimeModule.  This class is used by the dependency injection to bootstrap the IGenerator.
+            
+            Implement a main or JUnit test that creates the dependency injection engine, sets the input file and output directory, and then kicks off the generation.
+            </script>
+            </section>
+            <section data-markdown ><script type="text/template">
+            ###Dev Setup
+            
+            - Install Eclipse DSL or maybe the Modelling SDK
+            
+            - Clone the git repo and import projects
+            
+            - Create new project
+            </script>
+            </section>
+            <section data-markdown ><script type="text/template">
+            ###Dependencies
+            
+            - XTEXT:
+              - org.eclipse.xtext.xbase.lib
+              - org.eclipse.xtext.generator
+              - org.eclipse.xtext.util
+            - EMF:
+              - org.eclipse.emf.ecore
+              - org.eclipse.emf.ecore.xmi
+            - Google:
+              - com.google.inject
+            </script>
+            </section>
+            		<section>
+            <section data-markdown ><script type="text/template">
+            ###XText Classes
+            
+            The primary XText classes that need to be implemented / extended are:
+            - org.eclipse.xtext.generator.IGenerator;
+            
+              - This is the primary entry point for all text generation from a model.
+            
+            - org.eclipse.xtext.resource.generic.AbstractGenericResourceRuntimeModule;
+            
+              - Extend this class to provide a mapping between the file extension and the IGenerator implementation.
+            </script>
+            </section>
+                   	<section data-transition="convex">
+                   	<h3>XText Classes</h3>
+                   	<pre><code class="java">
+                   	package org.eclipse.xtext.generator;
+                   	</code></pre>
+                   	<pre><code class="java">
+                   	public interface IGenerator {
+                   		
+                   		/**
+                   		 * @param input the input for which to generate resources
+                   		 * @param fsa file system access to be used to generate files
+                   		 */
+                   		void doGenerate(Resource input, IFileSystemAccess fsa);
+                   	}
+                   	</code></pre>
+                   	</section>
+                   	<section data-transition="convex">
+                   	<h3>XText Classes</h3>
+                   	<pre><code class="java">
+                   	package org.eclipse.xtext.resource.generic;
+                   	</code></pre>
+                   	<pre><code class="java" data-noescape>
+                   	public abstract class AbstractGenericResourceRuntimeModule 
+                   	               extends AbstractGenericModule {
+                   	
+                   	        // Only showing abstract methods to override
+                   	
+                   		protected abstract String getLanguageName();
+                   		
+                   		protected abstract String getFileExtensions();
+                   	
+                   	}
+                   	</code></pre>
+                   	</section>
+            </section>
+            		<section>
+            <section data-markdown ><script type="text/template">
+            ###Google Guice
+            
+            The XText generator uses Google Guice for dependency injection.  The Guice injector is created by passing an instance of the AbstractGenericResourceRuntimeModule to the Guice.createInjector method.
+            </script>
+            </section>
+                   	<section >
+                   	To tie everything together, create a class that has @Inject properties for:
+                   	<pre><code class="java" data-noescape>
+                   	@Inject
+                   	com.google.inject.Provider<ResourceSet>;
+                   	 // Used to get a resource set
+                   	
+                   	@Inject
+                   	org.eclipse.xtext.validation.IResourceValidator; 
+                   	// Used to validate the resource after loading
+                   	
+                   	@Inject
+                   	org.eclipse.xtext.generator.IGenerator;  
+                   	// The generator to use
+                   	
+                   	@Inject
+                   	org.eclipse.xtext.generator.JavaIoFileSystemAccess;
+                   	// Used to specify the output path of the text being generated. 
+                   	</code></pre>
+                   	</section>
+            </section>
+            <section data-markdown ><script type="text/template">
+            ###Main Class
+            The easy part is actually the main class used to call the generation:
+            
+            - Create the Injector.
+            
+            - Use the Injector to get a fulling filled out instance of the class created above.
+            
+            - Call a method on the class to kick off the generation.
+            </script>
+            </section>
+            <section data-markdown ><script type="text/template">
+            ###Data Model
+            
+            The data model that we will use as an example was created from the Distributed Interactive Simulation (IEEE-1278.1) specification.
+            
+            The model uses some inheritance to define message structures.
+            
+            Model annotations are used to further specify the behavior needed.
+            </script>
+            </section>
+            <section >
+            <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/package-summary.html"><img src="images/EcoreRelations.gif" height="600px"></img></a>
+            </section>
+            <section >
+            <h3>Loading the Instance</h3>
+            <pre><code class="java">
+            String filepath; // Filename of the model instance
+            EMFPackage.eINSTANCE.eClass();
+            final ResourceSet rs = new ResourceSetImpl();
+            final URI uri = URI.createFileURI(filepath);
+            final Resource resource = rs.getResource(uri, true);
+            if (resource != null) {
+                EObject eobject = (EObject) resource.getContents().get(0);
+                // Cast eobject to the type needed.
+            }
+            </code></pre>
+            </section>
+            		<section>
+            <section data-markdown ><script type="text/template">
+            ###File System Access
+            
+            The FileSystemAccess instance is used by the text generator to create and delete files.
+            </script>
+            </section>
+                   	<section >
+                   	<pre><code class="java">
+                   	public interface IFileSystemAccess {
+                   	
+                   	    public final static String DEFAULT_OUTPUT = "DEFAULT_OUTPUT";
+                   	
+                   	    public void generateFile(String fileName, CharSequence contents);
+                   	
+                   	    public void generateFile(String fileName, String outputConfigurationName, 
+                   	            CharSequence contents);
+                   	
+                   	    public void deleteFile(String fileName);
+                   	
+                   	}
+                   	</code></pre>
+                   	</section>
+            </section>
+            </div>
+        </div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				slideNumber: true,
+				history: true,
+				keyboard: true,
+				center: true,
+				touch: false,
+				loop: true,
+				fragments: true,
+				embedded: false,
+				help: false,
+				showNotes: false,
+				autoSlide: 0,
+				autoSlideStoppable: false,
+				mouseWheel: false,
+				hideAddressBar: false,
+				previewLinks: false,				
+				transition: 'fade',
+				transitionSpeed: 'slow',
+				backgroundTransition: 'fade',
+				viewDistance: 3,
+				parallaxBackgroundImage: '',
+				parallaxBackgroundSize: '',
+				width: 1366,
+				height: 768,
+				margin: 0.1,
+				minScale: 0.2,
+				maxScale: 1.5,
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/notes/notes.js' }
+				]
+			});
+		</script>
+    </body>
+</html>
