@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="reveal" nsURI="http://www.cohesionforce.com/reveal" nsPrefix="reveal">
+  <eClassifiers xsi:type="ecore:EClass" name="Presentation">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="controls" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="progress" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="slideNumber" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="history" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="keyboard" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="center" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="touch" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="loop" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="rtl" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fragments" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="embedded" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="help" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="showNotes" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="autoSlide" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        defaultValueLiteral="0"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="autoSlideStoppable" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="mouseWheel" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hideAddressBar" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="previewLinks" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="transition" eType="#//TransitionStyle"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="transitionSpeed" eType="#//TransitionSpeed"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="backgroundTransition" eType="#//TransitionStyle"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="viewDistance" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        defaultValueLiteral="3"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="parallaxBackgroundImage"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="parallaxBackgroundSize"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="parallaxBackgroundHorizontal"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="parallaxBackgroundVertical"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="slides" upperBound="-1"
+        eType="#//Slide" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="backgrounds" upperBound="-1"
+        eType="#//Background" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="theme" eType="#//Theme"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="width" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        defaultValueLiteral="960"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="height" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        defaultValueLiteral="700"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="margin" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"
+        defaultValueLiteral="0.1"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="minScale" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"
+        defaultValueLiteral="0.2"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxScale" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"
+        defaultValueLiteral="1.5"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Slide">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="background" eType="#//Background"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="markdown" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Boolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="transition" eType="#//TransitionStyle"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="transitionSpeed" eType="#//TransitionSpeed"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="slides" upperBound="-1"
+        eType="#//Slide" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Background">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="src" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="size" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="repeat" eType="#//Repeat"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="TransitionStyle">
+    <eLiterals name="DEFAULT" literal="default"/>
+    <eLiterals name="NONE" value="1" literal="none"/>
+    <eLiterals name="FADE" value="2" literal="fade"/>
+    <eLiterals name="SLIDE" value="3" literal="slide"/>
+    <eLiterals name="CONVEX" value="4" literal="convex"/>
+    <eLiterals name="CONCAVE" value="5" literal="concave"/>
+    <eLiterals name="ZOOM" value="6" literal="zoom"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="TransitionSpeed">
+    <eLiterals name="DEFAULT" literal="default"/>
+    <eLiterals name="FAST" value="1" literal="fast"/>
+    <eLiterals name="SLOW" value="2" literal="slow"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Theme">
+    <eLiterals name="BLACK"/>
+    <eLiterals name="WHITE" value="1"/>
+    <eLiterals name="LEAGUE" value="2"/>
+    <eLiterals name="BEIGE" value="3"/>
+    <eLiterals name="SKY" value="4"/>
+    <eLiterals name="NIGHT" value="5"/>
+    <eLiterals name="SERIF" value="6"/>
+    <eLiterals name="SIMPLE" value="7"/>
+    <eLiterals name="SOLARIZED" value="8"/>
+    <eLiterals name="CUSTOM" value="9"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Repeat">
+    <eLiterals name="NO_REPEAT" literal="no-repeat"/>
+    <eLiterals name="REPEAT" value="1" literal="repeat"/>
+    <eLiterals name="REPEAT_X" value="2" literal="repeat-x"/>
+    <eLiterals name="REPEAT_Y" value="3" literal="repeat-y"/>
+    <eLiterals name="INITIAL" value="4" literal="initial"/>
+    <eLiterals name="INHERIT" value="5" literal="inherit"/>
+  </eClassifiers>
+</ecore:EPackage>

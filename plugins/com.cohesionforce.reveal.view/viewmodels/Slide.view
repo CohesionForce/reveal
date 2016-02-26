@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="ASCII"?>
+<org.eclipse.emf.ecp.view.model:View xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:org.eclipse.emf.ecp.view.model="http://org/eclipse/emf/ecp/view/model/170" xmi:id="_6LvdcNZyEeW1UcakoRvoUw" name="Slide" ecorePath="/com.cohesionforce.reveal.model/model/model.ecore">
+  <rootEClass href="http://www.cohesionforce.com/reveal#//Slide"/>
+  <children xsi:type="org.eclipse.emf.ecp.view.model:Control" xmi:id="_6MXIgNZyEeW1UcakoRvoUw" name="Control background">
+    <domainModelReference xsi:type="org.eclipse.emf.ecp.view.model:FeaturePathDomainModelReference" xmi:id="_6MXIgdZyEeW1UcakoRvoUw">
+      <domainModelEFeature xsi:type="ecore:EReference" href="http://www.cohesionforce.com/reveal#//Slide/background"/>
+    </domainModelReference>
+  </children>
+  <children xsi:type="org.eclipse.emf.ecp.view.model:Control" xmi:id="_6MXIgtZyEeW1UcakoRvoUw" name="Control markdown">
+    <domainModelReference xsi:type="org.eclipse.emf.ecp.view.model:FeaturePathDomainModelReference" xmi:id="_6MXIg9ZyEeW1UcakoRvoUw">
+      <domainModelEFeature xsi:type="ecore:EAttribute" href="http://www.cohesionforce.com/reveal#//Slide/markdown"/>
+    </domainModelReference>
+  </children>
+  <children xsi:type="org.eclipse.emf.ecp.view.model:Control" xmi:id="_6MXIhNZyEeW1UcakoRvoUw" name="Control text">
+    <domainModelReference xsi:type="org.eclipse.emf.ecp.view.model:FeaturePathDomainModelReference" xmi:id="_6MXIhdZyEeW1UcakoRvoUw">
+      <domainModelEFeature xsi:type="ecore:EAttribute" href="http://www.cohesionforce.com/reveal#//Slide/text"/>
+    </domainModelReference>
+  </children>
+  <children xsi:type="org.eclipse.emf.ecp.view.model:Control" xmi:id="_6MXIhtZyEeW1UcakoRvoUw" name="Control transition">
+    <domainModelReference xsi:type="org.eclipse.emf.ecp.view.model:FeaturePathDomainModelReference" xmi:id="_6MXIh9ZyEeW1UcakoRvoUw">
+      <domainModelEFeature xsi:type="ecore:EAttribute" href="http://www.cohesionforce.com/reveal#//Slide/transition"/>
+    </domainModelReference>
+  </children>
+  <children xsi:type="org.eclipse.emf.ecp.view.model:Control" xmi:id="_6MXIiNZyEeW1UcakoRvoUw" name="Control transitionSpeed">
+    <domainModelReference xsi:type="org.eclipse.emf.ecp.view.model:FeaturePathDomainModelReference" xmi:id="_6MXIidZyEeW1UcakoRvoUw">
+      <domainModelEFeature xsi:type="ecore:EAttribute" href="http://www.cohesionforce.com/reveal#//Slide/transitionSpeed"/>
+    </domainModelReference>
+  </children>
+  <children xsi:type="org.eclipse.emf.ecp.view.model:Control" xmi:id="_7cunYNZ2EeW1UcakoRvoUw">
+    <domainModelReference xsi:type="org.eclipse.emf.ecp.view.model:FeaturePathDomainModelReference" xmi:id="_9agisNZ2EeW1UcakoRvoUw">
+      <domainModelEFeature xsi:type="ecore:EReference" href="http://www.cohesionforce.com/reveal#//Slide/slides"/>
+    </domainModelReference>
+  </children>
+</org.eclipse.emf.ecp.view.model:View>

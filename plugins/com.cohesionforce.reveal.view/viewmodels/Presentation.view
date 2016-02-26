@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="ASCII"?>
+<org.eclipse.emf.ecp.view.model:View xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:org.eclipse.emf.ecp.view.group.model="http://org/eclipse/emf/ecp/view/group/model" xmlns:org.eclipse.emf.ecp.view.model="http://org/eclipse/emf/ecp/view/model/170" xmlns:org.eclipse.emf.ecp.view.vertical.model="http://org/eclipse/emf/ecp/view/vertical/model" xmi:id="_lfPj8NQnEeWgzZEmigXGyQ" name="Presentation" ecorePath="/com.cohesionforce.reveal.model/model/model.ecore">
+  <rootEClass href="http://www.cohesionforce.com/reveal#//Presentation"/>
+  <children xsi:type="org.eclipse.emf.ecp.view.vertical.model:VerticalLayout" xmi:id="_1OOy4NZ4EeW1UcakoRvoUw">
+    <children xsi:type="org.eclipse.emf.ecp.view.model:Control" xmi:id="_l1h9LdQnEeWgzZEmigXGyQ" name="Control slides">
+      <domainModelReference xsi:type="org.eclipse.emf.ecp.view.model:FeaturePathDomainModelReference" xmi:id="_yPPkINZ2EeW1UcakoRvoUw">
+        <domainModelEFeature xsi:type="ecore:EReference" href="http://www.cohesionforce.com/reveal#//Presentation/slides"/>
+      </domainModelReference>
+    </children>
+    <children xsi:type="org.eclipse.emf.ecp.view.group.model:Group" xmi:id="_u81B0NwAEeWsvsmVIXileQ" name="Visible Controls" groupType="Collapsible" collapsed="true">
+      <children xsi:type="org.eclipse.emf.ecp.view.model:Control" xmi:id="_l1hV8NQnEeWgzZEmigXGyQ" name="Control controls">
+        <domainModelReference xsi:type="org.eclipse.emf.ecp.view.model:FeaturePathDomainModelReference" xmi:id="_l1hV8dQnEeWgzZEmigXGyQ">
+          <domainModelEFeature xsi:type="ecore:EAttribute" href="http://www.cohesionforce.com/reveal#//Presentation/controls"/>
+        </domainModelReference>
+      </children>
+      <children xsi:type="org.eclipse.emf.ecp.view.model:Control" xmi:id="_l1hV8tQnEeWgzZEmigXGyQ" name="Control progress">
+        <domainModelReference xsi:type="org.eclipse.emf.ecp.view.model:FeaturePathDomainModelReference" xmi:id="_l1hV89QnEeWgzZEmigXGyQ">
+          <domainModelEFeature xsi:type="ecore:EAttribute" href="http://www.cohesionforce.com/reveal#//Presentation/progress"/>
+        </domainModelReference>
+      </children>
+      <children xsi:type="org.eclipse.emf.ecp.view.model:Control" xmi:id="_l1hV9NQnEeWgzZEmigXGyQ" name="Control slideNumber">
+        <domainModelReference xsi:type="org.eclipse.emf.ecp.view.model:FeaturePathDomainModelReference" xmi:id="_l1hV9dQnEeWgzZEmigXGyQ">
+          <domainModelEFeature xsi:type="ecore:EAttribute" href="http://www.cohesionforce.com/reveal#//Presentation/slideNumber"/>
+        </domainModelReference>
+      </children>
+      <children xsi:type="org.eclipse.emf.ecp.view.model:Control" xmi:id="_l1hV9tQnEeWgzZEmigXGyQ" name="Control history">
+        <domainModelReference xsi:type="org.eclipse.emf.ecp.view.model:FeaturePathDomainModelReference" xmi:id="_l1h9ANQnEeWgzZEmigXGyQ">
+          <domainModelEFeature xsi:type="ecore:EAttribute" href="http://www.cohesionforce.com/reveal#//Presentation/history"/>
+        </domainModelReference>
+      </children>
+      <children xsi:type="org.eclipse.emf.ecp.view.model:Control" xmi:id="_l1h9AdQnEeWgzZEmigXGyQ" name="Control keyboard">
+        <domainModelReference xsi:type="org.eclipse.emf.ecp.view.model:FeaturePathDomainModelReference" xmi:id="_l1h9AtQnEeWgzZEmigXGyQ">
+          <domainModelEFeature xsi:type="ecore:EAttribute" href="http://www.cohesionforce.com/reveal#//Presentation/keyboard"/>
+        </domainModelReference>
+      </children>
+      <children xsi:type="org.eclipse.emf.ecp.view.model:Control" xmi:id="_l1h9EdQnEeWgzZEmigXGyQ" name="Control showNotes">
+        <domainModelReference xsi:type="org.eclipse.emf.ecp.view.model:FeaturePathDomainModelReference" xmi:id="_l1h9EtQnEeWgzZEmigXGyQ">
+          <domainModelEFeature xsi:type="ecore:EAttribute" href="http://www.cohesionforce.com/reveal#//Presentation/showNotes"/>
+        </domainModelReference>
+      </children>
+      <children xsi:type="org.eclipse.emf.ecp.view.model:Control" xmi:id="_l1h9D9QnEeWgzZEmigXGyQ" name="Control help">
+        <domainModelReference xsi:type="org.eclipse.emf.ecp.view.model:FeaturePathDomainModelReference" xmi:id="_l1h9ENQnEeWgzZEmigXGyQ">
+          <domainModelEFeature xsi:type="ecore:EAttribute" href="http://www.cohesionforce.com/reveal#//Presentation/help"/>
+        </domainModelReference>
+      </children>
+      <children xsi:type="org.eclipse.emf.ecp.view.model:Control" xmi:id="_l1h9GdQnEeWgzZEmigXGyQ" name="Control hideAddressBar">
+        <domainModelReference xsi:type="org.eclipse.emf.ecp.view.model:FeaturePathDomainModelReference" xmi:id="_l1h9GtQnEeWgzZEmigXGyQ">
+          <domainModelEFeature xsi:type="ecore:EAttribute" href="http://www.cohesionforce.com/reveal#//Presentation/hideAddressBar"/>
+        </domainModelReference>
+      </children>
+    </children>
+    <children xsi:type="org.eclipse.emf.ecp.view.group.model:Group" xmi:id="_3a1I4NwAEeWsvsmVIXileQ" name="Presentation Behavior" groupType="Collapsible" collapsed="true">
+      <children xsi:type="org.eclipse.emf.ecp.view.model:Control" xmi:id="_l1h9A9QnEeWgzZEmigXGyQ" name="Control center">
+        <domainModelReference xsi:type="org.eclipse.emf.ecp.view.model:FeaturePathDomainModelReference" xmi:id="_l1h9BNQnEeWgzZEmigXGyQ">
+          <domainModelEFeature xsi:type="ecore:EAttribute" href="http://www.cohesionforce.com/reveal#//Presentation/center"/>
+        </domainModelReference>
+      </children>
+      <children xsi:type="org.eclipse.emf.ecp.view.model:Control" xmi:id="_l1h9B9QnEeWgzZEmigXGyQ" name="Control loop">
+        <domainModelReference xsi:type="org.eclipse.emf.ecp.view.model:FeaturePathDomainModelReference" xmi:id="_l1h9CNQnEeWgzZEmigXGyQ">
+          <domainModelEFeature xsi:type="ecore:EAttribute" href="http://www.cohesionforce.com/reveal#//Presentation/loop"/>
+        </domainModelReference>
+      </children>
+      <children xsi:type="org.eclipse.emf.ecp.view.model:Control" xmi:id="_l1h9CdQnEeWgzZEmigXGyQ" name="Control rtl">
+        <domainModelReference xsi:type="org.eclipse.emf.ecp.view.model:FeaturePathDomainModelReference" xmi:id="_l1h9CtQnEeWgzZEmigXGyQ">
+          <domainModelEFeature xsi:type="ecore:EAttribute" href="http://www.cohesionforce.com/reveal#//Presentation/rtl"/>
+        </domainModelReference>
+      </children>
+      <children xsi:type="org.eclipse.emf.ecp.view.model:Control" xmi:id="_l1h9BdQnEeWgzZEmigXGyQ" name="Control touch">
+        <domainModelReference xsi:type="org.eclipse.emf.ecp.view.model:FeaturePathDomainModelReference" xmi:id="_l1h9BtQnEeWgzZEmigXGyQ">
+          <domainModelEFeature xsi:type="ecore:EAttribute" href="http://www.cohesionforce.com/reveal#//Presentation/touch"/>
+        </domainModelReference>
+      </children>
+      <children xsi:type="org.eclipse.emf.ecp.view.model:Control" xmi:id="_l1h9C9QnEeWgzZEmigXGyQ" name="Control fragments">
+        <domainModelReference xsi:type="org.eclipse.emf.ecp.view.model:FeaturePathDomainModelReference" xmi:id="_l1h9DNQnEeWgzZEmigXGyQ">
+          <domainModelEFeature xsi:type="ecore:EAttribute" href="http://www.cohesionforce.com/reveal#//Presentation/fragments"/>
+        </domainModelReference>
+      </children>
+      <children xsi:type="org.eclipse.emf.ecp.view.model:Control" xmi:id="_l1h9E9QnEeWgzZEmigXGyQ" name="Control autoSlide">
+        <domainModelReference xsi:type="org.eclipse.emf.ecp.view.model:FeaturePathDomainModelReference" xmi:id="_l1h9FNQnEeWgzZEmigXGyQ">
+          <domainModelEFeature xsi:type="ecore:EAttribute" href="http://www.cohesionforce.com/reveal#//Presentation/autoSlide"/>
+        </domainModelReference>
+      </children>
+      <children xsi:type="org.eclipse.emf.ecp.view.model:Control" xmi:id="_l1h9FdQnEeWgzZEmigXGyQ" name="Control autoSlideStoppable">
+        <domainModelReference xsi:type="org.eclipse.emf.ecp.view.model:FeaturePathDomainModelReference" xmi:id="_l1h9FtQnEeWgzZEmigXGyQ">
+          <domainModelEFeature xsi:type="ecore:EAttribute" href="http://www.cohesionforce.com/reveal#//Presentation/autoSlideStoppable"/>
+        </domainModelReference>
+      </children>
+      <children xsi:type="org.eclipse.emf.ecp.view.model:Control" xmi:id="_l1h9DdQnEeWgzZEmigXGyQ" name="Control embedded">
+        <domainModelReference xsi:type="org.eclipse.emf.ecp.view.model:FeaturePathDomainModelReference" xmi:id="_l1h9DtQnEeWgzZEmigXGyQ">
+          <domainModelEFeature xsi:type="ecore:EAttribute" href="http://www.cohesionforce.com/reveal#//Presentation/embedded"/>
+        </domainModelReference>
+      </children>
+      <children xsi:type="org.eclipse.emf.ecp.view.model:Control" xmi:id="_l1h9F9QnEeWgzZEmigXGyQ" name="Control mouseWheel">
+        <domainModelReference xsi:type="org.eclipse.emf.ecp.view.model:FeaturePathDomainModelReference" xmi:id="_l1h9GNQnEeWgzZEmigXGyQ">
+          <domainModelEFeature xsi:type="ecore:EAttribute" href="http://www.cohesionforce.com/reveal#//Presentation/mouseWheel"/>
+        </domainModelReference>
+      </children>
+      <children xsi:type="org.eclipse.emf.ecp.view.model:Control" xmi:id="_l1h9G9QnEeWgzZEmigXGyQ" name="Control previewLinks">
+        <domainModelReference xsi:type="org.eclipse.emf.ecp.view.model:FeaturePathDomainModelReference" xmi:id="_l1h9HNQnEeWgzZEmigXGyQ">
+          <domainModelEFeature xsi:type="ecore:EAttribute" href="http://www.cohesionforce.com/reveal#//Presentation/previewLinks"/>
+        </domainModelReference>
+      </children>
+    </children>
+    <children xsi:type="org.eclipse.emf.ecp.view.group.model:Group" xmi:id="_BqrBANwBEeWsvsmVIXileQ" name="Presentation Settings" groupType="Collapsible" collapsed="true">
+      <children xsi:type="org.eclipse.emf.ecp.view.model:Control" xmi:id="_l1h9HdQnEeWgzZEmigXGyQ" name="Control transition">
+        <domainModelReference xsi:type="org.eclipse.emf.ecp.view.model:FeaturePathDomainModelReference" xmi:id="_l1h9HtQnEeWgzZEmigXGyQ">
+          <domainModelEFeature xsi:type="ecore:EAttribute" href="http://www.cohesionforce.com/reveal#//Presentation/transition"/>
+        </domainModelReference>
+      </children>
+      <children xsi:type="org.eclipse.emf.ecp.view.model:Control" xmi:id="_l1h9H9QnEeWgzZEmigXGyQ" name="Control transitionSpeed">
+        <domainModelReference xsi:type="org.eclipse.emf.ecp.view.model:FeaturePathDomainModelReference" xmi:id="_l1h9INQnEeWgzZEmigXGyQ">
+          <domainModelEFeature xsi:type="ecore:EAttribute" href="http://www.cohesionforce.com/reveal#//Presentation/transitionSpeed"/>
+        </domainModelReference>
+      </children>
+      <children xsi:type="org.eclipse.emf.ecp.view.model:Control" xmi:id="_l1h9IdQnEeWgzZEmigXGyQ" name="Control backgroundTransition">
+        <domainModelReference xsi:type="org.eclipse.emf.ecp.view.model:FeaturePathDomainModelReference" xmi:id="_l1h9ItQnEeWgzZEmigXGyQ">
+          <domainModelEFeature xsi:type="ecore:EAttribute" href="http://www.cohesionforce.com/reveal#//Presentation/backgroundTransition"/>
+        </domainModelReference>
+      </children>
+      <children xsi:type="org.eclipse.emf.ecp.view.model:Control" xmi:id="_l1h9JdQnEeWgzZEmigXGyQ" name="Control parallaxBackgroundImage">
+        <domainModelReference xsi:type="org.eclipse.emf.ecp.view.model:FeaturePathDomainModelReference" xmi:id="_l1h9JtQnEeWgzZEmigXGyQ">
+          <domainModelEFeature xsi:type="ecore:EAttribute" href="http://www.cohesionforce.com/reveal#//Presentation/parallaxBackgroundImage"/>
+        </domainModelReference>
+      </children>
+      <children xsi:type="org.eclipse.emf.ecp.view.model:Control" xmi:id="_l1h9J9QnEeWgzZEmigXGyQ" name="Control parallaxBackgroundSize">
+        <domainModelReference xsi:type="org.eclipse.emf.ecp.view.model:FeaturePathDomainModelReference" xmi:id="_l1h9KNQnEeWgzZEmigXGyQ">
+          <domainModelEFeature xsi:type="ecore:EAttribute" href="http://www.cohesionforce.com/reveal#//Presentation/parallaxBackgroundSize"/>
+        </domainModelReference>
+      </children>
+      <children xsi:type="org.eclipse.emf.ecp.view.model:Control" xmi:id="_l1h9KdQnEeWgzZEmigXGyQ" name="Control parallaxBackgroundHorizontal">
+        <domainModelReference xsi:type="org.eclipse.emf.ecp.view.model:FeaturePathDomainModelReference" xmi:id="_l1h9KtQnEeWgzZEmigXGyQ">
+          <domainModelEFeature xsi:type="ecore:EAttribute" href="http://www.cohesionforce.com/reveal#//Presentation/parallaxBackgroundHorizontal"/>
+        </domainModelReference>
+      </children>
+      <children xsi:type="org.eclipse.emf.ecp.view.model:Control" xmi:id="_l1h9K9QnEeWgzZEmigXGyQ" name="Control parallaxBackgroundVertical">
+        <domainModelReference xsi:type="org.eclipse.emf.ecp.view.model:FeaturePathDomainModelReference" xmi:id="_l1h9LNQnEeWgzZEmigXGyQ">
+          <domainModelEFeature xsi:type="ecore:EAttribute" href="http://www.cohesionforce.com/reveal#//Presentation/parallaxBackgroundVertical"/>
+        </domainModelReference>
+      </children>
+      <children xsi:type="org.eclipse.emf.ecp.view.model:Control" xmi:id="_l1h9I9QnEeWgzZEmigXGyQ" name="Control viewDistance">
+        <domainModelReference xsi:type="org.eclipse.emf.ecp.view.model:FeaturePathDomainModelReference" xmi:id="_l1h9JNQnEeWgzZEmigXGyQ">
+          <domainModelEFeature xsi:type="ecore:EAttribute" href="http://www.cohesionforce.com/reveal#//Presentation/viewDistance"/>
+        </domainModelReference>
+      </children>
+      <children xsi:type="org.eclipse.emf.ecp.view.model:Control" xmi:id="_l1h9MdQnEeWgzZEmigXGyQ" name="Control theme">
+        <domainModelReference xsi:type="org.eclipse.emf.ecp.view.model:FeaturePathDomainModelReference" xmi:id="_l1h9MtQnEeWgzZEmigXGyQ">
+          <domainModelEFeature xsi:type="ecore:EAttribute" href="http://www.cohesionforce.com/reveal#//Presentation/theme"/>
+        </domainModelReference>
+      </children>
+      <children xsi:type="org.eclipse.emf.ecp.view.model:Control" xmi:id="_l1h9N9QnEeWgzZEmigXGyQ" name="Control margin">
+        <domainModelReference xsi:type="org.eclipse.emf.ecp.view.model:FeaturePathDomainModelReference" xmi:id="_l1h9ONQnEeWgzZEmigXGyQ">
+          <domainModelEFeature xsi:type="ecore:EAttribute" href="http://www.cohesionforce.com/reveal#//Presentation/margin"/>
+        </domainModelReference>
+      </children>
+      <children xsi:type="org.eclipse.emf.ecp.view.model:Control" xmi:id="_l1h9M9QnEeWgzZEmigXGyQ" name="Control width">
+        <domainModelReference xsi:type="org.eclipse.emf.ecp.view.model:FeaturePathDomainModelReference" xmi:id="_l1h9NNQnEeWgzZEmigXGyQ">
+          <domainModelEFeature xsi:type="ecore:EAttribute" href="http://www.cohesionforce.com/reveal#//Presentation/width"/>
+        </domainModelReference>
+      </children>
+      <children xsi:type="org.eclipse.emf.ecp.view.model:Control" xmi:id="_l1h9NdQnEeWgzZEmigXGyQ" name="Control height">
+        <domainModelReference xsi:type="org.eclipse.emf.ecp.view.model:FeaturePathDomainModelReference" xmi:id="_l1h9NtQnEeWgzZEmigXGyQ">
+          <domainModelEFeature xsi:type="ecore:EAttribute" href="http://www.cohesionforce.com/reveal#//Presentation/height"/>
+        </domainModelReference>
+      </children>
+      <children xsi:type="org.eclipse.emf.ecp.view.model:Control" xmi:id="_l1h9OdQnEeWgzZEmigXGyQ" name="Control minScale">
+        <domainModelReference xsi:type="org.eclipse.emf.ecp.view.model:FeaturePathDomainModelReference" xmi:id="_l1h9OtQnEeWgzZEmigXGyQ">
+          <domainModelEFeature xsi:type="ecore:EAttribute" href="http://www.cohesionforce.com/reveal#//Presentation/minScale"/>
+        </domainModelReference>
+      </children>
+      <children xsi:type="org.eclipse.emf.ecp.view.model:Control" xmi:id="_l1h9O9QnEeWgzZEmigXGyQ" name="Control maxScale">
+        <domainModelReference xsi:type="org.eclipse.emf.ecp.view.model:FeaturePathDomainModelReference" xmi:id="_l1h9PNQnEeWgzZEmigXGyQ">
+          <domainModelEFeature xsi:type="ecore:EAttribute" href="http://www.cohesionforce.com/reveal#//Presentation/maxScale"/>
+        </domainModelReference>
+      </children>
+    </children>
+    <children xsi:type="org.eclipse.emf.ecp.view.model:Control" xmi:id="_l1h9L9QnEeWgzZEmigXGyQ" name="Control background">
+      <domainModelReference xsi:type="org.eclipse.emf.ecp.view.model:FeaturePathDomainModelReference" xmi:id="_0MzdANZ2EeW1UcakoRvoUw">
+        <domainModelEFeature xsi:type="ecore:EReference" href="http://www.cohesionforce.com/reveal#//Presentation/backgrounds"/>
+      </domainModelReference>
+    </children>
+  </children>
+</org.eclipse.emf.ecp.view.model:View>

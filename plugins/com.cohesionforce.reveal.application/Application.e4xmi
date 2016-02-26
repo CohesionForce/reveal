@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_-sg84KN3EeSnz4BKTyBMlg" elementId="org.eclipse.e4.ide.application" bindingContexts="_-shj8KN3EeSnz4BKTyBMlg">
+  <children xsi:type="basic:TrimmedWindow" xmi:id="_-sg84aN3EeSnz4BKTyBMlg" label="Reveal Editor" width="500" height="400">
+    <children xsi:type="basic:PartSashContainer" xmi:id="_N8UDsKN_EeSnz4BKTyBMlg" elementId="reveal.sash.mainSash" horizontal="true">
+      <children xsi:type="basic:PartStack" xmi:id="_jFKswKN_EeSnz4BKTyBMlg" elementId="reveal.stack.siteStack"/>
+      <children xsi:type="basic:PartStack" xmi:id="_jzBRQKN_EeSnz4BKTyBMlg" elementId="reveal.stack.pageStack"/>
+    </children>
+    <mainMenu xmi:id="_v8EtwKN_EeSnz4BKTyBMlg" elementId="com.cohesionforce.reveal.application.menu.0">
+      <children xsi:type="menu:Menu" xmi:id="_zX5UYKN_EeSnz4BKTyBMlg" elementId="com.cohesionforce.reveal.application.menu.file" label="&amp;File">
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_P2Iy8NXnEeW1BuEuB_qY2w" elementId="com.cohesionforce.reveal.application.handledmenuitem.new" label="&amp;New" command="_7IyaINXmEeW1BuEuB_qY2w"/>
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_1BvnEKN_EeSnz4BKTyBMlg" elementId="reveal.handler.open" label="&amp;Open" command="_TKsb0KN5EeSnz4BKTyBMlg"/>
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_0XJmIKkKEeSvCezUuo7xPA" elementId="reveal.handler.generate" label="Generate" command="_eYAOQKkKEeSvCezUuo7xPA"/>
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_ZzgTIKOKEeSnz4BKTyBMlg" elementId="reveal.handler.save" label="&amp;Save" command="_KJppYKOKEeSnz4BKTyBMlg"/>
+        <children xsi:type="menu:MenuSeparator" xmi:id="_31DcMKN_EeSnz4BKTyBMlg" elementId="com.cohesionforce.reveal.application.menuseparator.0"/>
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_5NLswKN_EeSnz4BKTyBMlg" elementId="com.cohesionforce.reveal.application.handledmenuitem.exit" label="E&amp;xit" command="_zb1uUKOBEeSnz4BKTyBMlg"/>
+      </children>
+    </mainMenu>
+  </children>
+  <handlers xmi:id="_Vz-yQKN5EeSnz4BKTyBMlg" elementId="reveal.handler.Open" contributionURI="bundleclass://com.cohesionforce.reveal.application/com.cohesionforce.reveal.application.handler.OpenHandler" command="_TKsb0KN5EeSnz4BKTyBMlg"/>
+  <handlers xmi:id="_MTayQKOKEeSnz4BKTyBMlg" elementId="reveal.handler.save" contributionURI="bundleclass://com.cohesionforce.reveal.application/com.cohesionforce.reveal.application.handler.SaveHandler" command="_KJppYKOKEeSnz4BKTyBMlg"/>
+  <handlers xmi:id="_hSPKwKkKEeSvCezUuo7xPA" elementId="com.cohesionforce.reveal.application.handler.0" contributionURI="bundleclass://com.cohesionforce.reveal.application/com.cohesionforce.reveal.application.handler.GenerateHandler" command="_eYAOQKkKEeSvCezUuo7xPA"/>
+  <handlers xmi:id="_JXT44NXoEeW8o_8gqS3rIQ" elementId="com.cohesionforce.reveal.application.handler.0" contributionURI="bundleclass://com.cohesionforce.reveal.application/com.cohesionforce.reveal.application.handler.NewHandler" command="_7IyaINXmEeW1BuEuB_qY2w"/>
+  <bindingTables xmi:id="_nMvTkNnlEeWcw9q4llCldw" elementId="com.cohesionforce.reveal.application.bindingtable.0" bindingContext="_-shj8KN3EeSnz4BKTyBMlg">
+    <tags>type:user</tags>
+    <bindings xmi:id="_qSe8gNnlEeWcw9q4llCldw" elementId="com.cohesionforce.reveal.keybinding.save" keySequence="M1+S" command="_KJppYKOKEeSnz4BKTyBMlg">
+      <tags>type:user</tags>
+    </bindings>
+    <bindings xmi:id="_0YrJYNnlEeWcw9q4llCldw" elementId="com.cohesionforce.reveal.keybinding.generate" keySequence="M1+G" command="_eYAOQKkKEeSvCezUuo7xPA">
+      <tags>type:user</tags>
+    </bindings>
+    <bindings xmi:id="_5vmx0NnlEeWcw9q4llCldw" elementId="com.cohesionforce.reveal.keybinding.open" keySequence="M1+O" command="_TKsb0KN5EeSnz4BKTyBMlg">
+      <tags>type:user</tags>
+    </bindings>
+  </bindingTables>
+  <rootContext xmi:id="_-shj8KN3EeSnz4BKTyBMlg" elementId="org.eclipse.ui.contexts.dialogAndWindow" name="In Dialog and Windows">
+    <children xmi:id="_-shj8aN3EeSnz4BKTyBMlg" elementId="org.eclipse.ui.contexts.window" name="In Windows"/>
+    <children xmi:id="_-shj8qN3EeSnz4BKTyBMlg" elementId="org.eclipse.ui.contexts.dialog" name="In Dialogs"/>
+  </rootContext>
+  <descriptors xmi:id="__gAyMKN-EeSnz4BKTyBMlg" elementId="reveal.descriptor.siteEditorPart" label="Site Editor Part" allowMultiple="true" closeable="true" dirtyable="true" contributionURI="bundleclass://com.cohesionforce.reveal.application/com.cohesionforce.reveal.application.part.SiteEditorPart"/>
+  <descriptors xmi:id="_djAtANZzEeW1UcakoRvoUw" elementId="reveal.descriptor.slideEditorPart" label="Slide Editor Part" closeable="true" contributionURI="bundleclass://com.cohesionforce.reveal.application/com.cohesionforce.reveal.application.part.SlideEditorPart"/>
+  <commands xmi:id="_TKsb0KN5EeSnz4BKTyBMlg" elementId="com.cohesionforce.command.Open" commandName="Open"/>
+  <commands xmi:id="_zb1uUKOBEeSnz4BKTyBMlg" elementId="com.cohesionforce.command.exit" commandName="Exit"/>
+  <commands xmi:id="_KJppYKOKEeSnz4BKTyBMlg" elementId="com.cohesionforce.command.save" commandName="Save"/>
+  <commands xmi:id="_eYAOQKkKEeSvCezUuo7xPA" elementId="com.cohesionforce.command.generate" commandName="Generate"/>
+  <commands xmi:id="_7IyaINXmEeW1BuEuB_qY2w" elementId="com.cohesionforce.command.new" commandName="New"/>
+  <addons xmi:id="_-sg84qN3EeSnz4BKTyBMlg" elementId="org.eclipse.e4.core.commands.service" contributionURI="bundleclass://org.eclipse.e4.core.commands/org.eclipse.e4.core.commands.CommandServiceAddon"/>
+  <addons xmi:id="_-sg846N3EeSnz4BKTyBMlg" elementId="org.eclipse.e4.ui.contexts.service" contributionURI="bundleclass://org.eclipse.e4.ui.services/org.eclipse.e4.ui.services.ContextServiceAddon"/>
+  <addons xmi:id="_-sg85KN3EeSnz4BKTyBMlg" elementId="org.eclipse.e4.ui.bindings.service" contributionURI="bundleclass://org.eclipse.e4.ui.bindings/org.eclipse.e4.ui.bindings.BindingServiceAddon"/>
+  <addons xmi:id="_-sg85aN3EeSnz4BKTyBMlg" elementId="org.eclipse.e4.ui.workbench.commands.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.CommandProcessingAddon"/>
+  <addons xmi:id="_-sg85qN3EeSnz4BKTyBMlg" elementId="org.eclipse.e4.ui.workbench.handler.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.HandlerProcessingAddon"/>
+  <addons xmi:id="_-sg856N3EeSnz4BKTyBMlg" elementId="org.eclipse.e4.ui.workbench.contexts.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.ContextProcessingAddon"/>
+  <addons xmi:id="_-sg86KN3EeSnz4BKTyBMlg" elementId="org.eclipse.e4.ui.workbench.bindings.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.swt/org.eclipse.e4.ui.workbench.swt.util.BindingProcessingAddon"/>
+</application:Application>
