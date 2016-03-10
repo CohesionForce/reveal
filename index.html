@@ -56,29 +56,41 @@
             <section data-markdown ><script type="text/template">
             ###Issues
             
-            XText creates an EMF model for a parse tree based on a grammar and creates an in-memory instance when parsing a file.  We already have an instance of a model and do not require a DSL to parse a file.
+            - XText creates an EMF model for a parse tree based on a grammar and creates an in-memory instance when parsing a file.  We already have an instance of a model and do not require a DSL to parse a file.
             
-            XText uses Google Guice dependency injection to create and call a code generator.  We want to be able to call a method either in a main, or a unit test.
+            - XText uses Google Guice dependency injection to create and call a code generator.  We want to be able to call a method either in a main, or a unit test.
             </script>
             </section>
+            		<section>
             <section data-markdown ><script type="text/template">
             ###Solutions
             
-            Implement the XText interface org.eclipse.xtext.generator.IGenerator.  This is the class that does that actual code generation.
+            - Implement the XText interface org.eclipse.xtext.generator.IGenerator.  This is the class that does that actual code generation.
             
-            Extend the XText class org.eclipse.xtext.resource.generic.AbstractGenericResourceRuntimeModule.  This class is used by the dependency injection to bootstrap the IGenerator.
+            - Extend the XText class org.eclipse.xtext.resource.generic.AbstractGenericResourceRuntimeModule.  This class is used by the dependency injection to bootstrap the IGenerator.
             
-            Implement a main or JUnit test that creates the dependency injection engine, sets the input file and output directory, and then kicks off the generation.
+            - Implement a main or JUnit test that creates the dependency injection engine, sets the input file and output directory, and then kicks off the generation.
             </script>
+            </section>
+                   	<section data-markdown data-transition="convex"><script type="text/template">
+                   	// Yesterday's Converstion
+                   	
+                   	String qestion = "Why not just use XTend as a standalone application..."; // -Sven
+                   	
+                   	String answer = "Well, that would have made sense if I had thought of it."; // J.
+                   	</script>
+                   	</section>
             </section>
             <section data-markdown ><script type="text/template">
             ###Dev Setup
             
             - Install Eclipse DSL or maybe the Modelling SDK
             
-            - Clone the git repo and import projects
+            - Create a plugin project
             
-            - Create new project
+            - Add the XText nature to the project
+            
+            - Add the dependencies shown on the next slide
             </script>
             </section>
             <section data-markdown ><script type="text/template">
@@ -100,11 +112,11 @@
             ###XText Classes
             
             The primary XText classes that need to be implemented / extended are:
-            - org.eclipse.xtext.generator.IGenerator;
+            + *org.eclipse.xtext.generator.IGenerator*
             
-              - This is the primary entry point for all text generation from a model.
+             + This is the primary entry point for all text generation from a model.
             
-            - org.eclipse.xtext.resource.generic.AbstractGenericResourceRuntimeModule;
+            - *org.eclipse.xtext.resource.generic.AbstractGenericResourceRuntimeModule*
             
               - Extend this class to provide a mapping between the file extension and the IGenerator implementation.
             </script>
@@ -143,6 +155,24 @@
                    	}
                    	</code></pre>
                    	</section>
+                   	<section >
+                   	<h3>Additional Methods needed</h3>
+                   	
+                   	It appears that there are additional methods retrieved through reflection that are needed on the AbstractGenericResourceRuntimeModule:
+                   	
+                   	<pre><code class="java" data-noescape>
+                   	public abstract class AbstractGenericResourceRuntimeModule 
+                   	               extends AbstractGenericModule {
+                   	
+                   	 	public Class<? extends IGenerator> bindIGenerator();
+                   		// Return the implementatino if IGenerator
+                   	 
+                   		public Class<? extends ResourceSet> bindResourceSet();
+                   		// typically returns ResourceSetImpl.class;
+                   	
+                   	}
+                   	</code></pre>
+                   	</section>
             </section>
             		<section>
             <section data-markdown ><script type="text/template">
@@ -151,7 +181,7 @@
             The XText generator uses Google Guice for dependency injection.  The Guice injector is created by passing an instance of the AbstractGenericResourceRuntimeModule to the Guice.createInjector method.
             </script>
             </section>
-                   	<section >
+                   	<section data-transition="convex">
                    	To tie everything together, create a class that has @Inject properties for:
                    	<pre><code class="java" data-noescape>
                    	@Inject
@@ -183,19 +213,6 @@
             - Call a method on the class to kick off the generation.
             </script>
             </section>
-            <section data-markdown ><script type="text/template">
-            ###Data Model
-            
-            The data model that we will use as an example was created from the Distributed Interactive Simulation (IEEE-1278.1) specification.
-            
-            The model uses some inheritance to define message structures.
-            
-            Model annotations are used to further specify the behavior needed.
-            </script>
-            </section>
-            <section >
-            <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/package-summary.html"><img src="images/EcoreRelations.gif" height="600px"></img></a>
-            </section>
             <section >
             <h3>Loading the Instance</h3>
             <pre><code class="java">
@@ -217,7 +234,7 @@
             The FileSystemAccess instance is used by the text generator to create and delete files.
             </script>
             </section>
-                   	<section >
+                   	<section data-transition="convex">
                    	<pre><code class="java">
                    	public interface IFileSystemAccess {
                    	
@@ -233,6 +250,57 @@
                    	}
                    	</code></pre>
                    	</section>
+                   	<section data-markdown ><script type="text/template">
+                   	/**
+                   	 Setting up FileSystemAccess
+                   	 */
+                   	
+                   	// The setup for the FileSystemAccess is simple if you are just generating
+                   	// code to a mounted drive location:
+                   	
+                   	    @Inject
+                   	    private JavaIoFileSystemAccess fileAccess;
+                   	
+                   	    fileAccess.setOutputPath(outputDir);
+                   	
+                   	// And that is all for FileSystemAccess
+                   	</script>
+                   	</section>
+            </section>
+            <section data-markdown ><script type="text/template">
+            ###Data Model
+            
+            The data model that we will use as an example was created from the Distributed Interactive Simulation (IEEE-1278.1) specification.
+            
+            The model uses some inheritance to define message structures.
+            
+            Model annotations are used to further specify the behavior needed.
+            </script>
+            </section>
+            <section >
+            <a href="http://download.eclipse.org/modeling/emf/emf/javadoc/2.9.0/org/eclipse/emf/ecore/package-summary.html"><img src="images/EcoreRelations.gif" height="600px"></img></a>
+            </section>
+            <section data-markdown ><script type="text/template">
+            ###Actually run the generator!
+            
+                // Real work happens here:
+                generator.doGenerate(resource, fileAccess);
+                
+            
+            + [Source File for EcoreGenerator](https://github.com/CohesionForce/dis-toolkit/blob/master/plugins/com.cohesionforce.dis.gen/src/com/cohesionforce/dis/gen/EcoreGenerator.xtend)
+            
+            + [Source File for AvroSchemaGenerator](https://github.com/CohesionForce/dis-toolkit/blob/master/plugins/com.cohesionforce.dis.gen/src/com/cohesionforce/dis/gen/AvroSchemaGenerator.xtend)
+            
+            + [Source File for GenerateUnmarshaller](https://github.com/CohesionForce/dis-toolkit/blob/master/plugins/com.cohesionforce.dis.gen/src/com/cohesionforce/dis/gen/GenerateUnmarshaller.xtend)
+            </script>
+            </section>
+            <section data-markdown ><script type="text/template">
+            ###Don't forget!
+            
+            1. Sign in: [www.eclipsecon.org](https://www.eclipsecon.org)
+            2. Select [this session](https://www.eclipsecon.org/na2016/session/creating-standalone-generator-xtend)
+            3. Evaluate it.  Comments are greatly appreciated.
+            </script>
             </section>
             </div>
         </div>
@@ -249,7 +317,7 @@
 				keyboard: true,
 				center: true,
 				touch: false,
-				loop: true,
+				loop: false,
 				fragments: true,
 				embedded: false,
 				help: false,
